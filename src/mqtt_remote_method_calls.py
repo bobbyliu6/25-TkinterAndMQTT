@@ -128,7 +128,7 @@ import json
 import collections
 import paho.mqtt.client as mqtt
 
-LEGO_NUMBER = 99  # TODO: Set your LEGO_NUMBER
+LEGO_NUMBER = 17  # DONE: Set your LEGO_NUMBER
 
 
 class MqttClient(object):
@@ -265,6 +265,7 @@ class MqttClient(object):
             # Assumes that the user has the parameters correct.
             if "payload" in message_dict:
                 message_payload = message_dict["payload"]
+
                 attempted_return = method_to_call(*message_payload)
             else:
                 attempted_return = method_to_call()
